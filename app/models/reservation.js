@@ -7,11 +7,18 @@ const reservationSchema=new Schema({
         required:true,
         minlength:3
     },
+
+    noOfCustomer:{
+        type:String,
+        required:true,
+    },
+
     mobile:{
         type:String,
         required:true,
         minlength:10,
     },
+
     email:{
         type:String,
         required:true,
@@ -25,16 +32,19 @@ const reservationSchema=new Schema({
             }
         }
     },
+
     address:{
         type:String,
         required:true,
         minlength:10,
         maxlength:128
     },
+
     gender:{
         type:String,
         required:true,
     },
+
     date:{
         type:Date,
         required:true,
@@ -47,10 +57,12 @@ const reservationSchema=new Schema({
             }
         }
     },
+
     time:{
         type:String,
         required:true
     },
+    
     user:{
         type:Schema.Types.ObjectId,
         ref:'User',

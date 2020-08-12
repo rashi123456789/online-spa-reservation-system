@@ -14,7 +14,9 @@ class ReservationForm extends React.Component{
             email:props.reservation ? props.reservation.email:'',
             mobile:props.reservation ? props.reservation.mobile:'',
             date:props.reservation ? props.reservation.date:'',
-            time:props.reservation ? props.reservation.time:''
+            time:props.reservation ? props.reservation.time:'',
+            noOfCustomer:props.reservation ? props.reservation.noOfCustomer:'',
+            number:[1,2,3,4]
         }
     }
     handleSubmit = (e) => {
@@ -27,6 +29,7 @@ class ReservationForm extends React.Component{
             mobile:this.state.mobile,
             date:this.state.date,
             time:this.state.time,
+            noOfCustomer:this.state.noOfCustomer
         }
         this.props.reservation && (formData.id = this.props.reservation._id)
         this.props.handleEditSubmit(formData)
@@ -146,6 +149,18 @@ class ReservationForm extends React.Component{
                                 value={this.state.time}
                                 onChange={this.handleChange}
                             /> <br/><br/>
+                        </div>
+                        <div>
+                            <Form.Label htmlFor="noOfCustomer">NUMBER OF CUSTOMERS:-</Form.Label>
+                            <Form.Control as="select" name='noOfCustomer' id='noOfCustomer' value={this.state.noOfCustomer} onChange={this.handleChange}>
+                            <option value=''>----select----</option>
+                            {
+                                this.state.number.map((num,i)=>{
+                                return <option value={num} key={i}>{num}</option>
+                                })
+                            }
+                        </Form.Control><br/><br/>
+
                         </div>
                         <div className="container form-group">
                             <input type="submit" value="Submit" className='btn btn-secondary'/>

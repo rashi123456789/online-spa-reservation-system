@@ -10,6 +10,7 @@ function ReservationShow(props){
         <Container>
             <h1 className='pt-5 pb-2'>Reservation Show</h1>
             <h2 className='mt-3'><b>Customer Name:-</b>{props.reservation.name}</h2>
+            <h2 className='mt-3'><b>No.of Customer:-</b>{props.reservation.noOfCustomer}</h2>
             <h2 className='mt-3'><b>Mobile:-</b>{props.reservation.mobile} </h2>
             <h2 className='mt-3'><b>Email:-</b>{props.reservation.email} </h2>
             <h2 className='mt-3'><b>Address:-</b>{props.reservation.address}</h2>

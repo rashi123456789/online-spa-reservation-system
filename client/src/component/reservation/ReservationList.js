@@ -33,6 +33,7 @@ function ReservationList(props){
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Customers</th>
                             <th>Mobile</th>
                             <th>Email</th>
                             <th>Date</th>
@@ -49,6 +50,7 @@ function ReservationList(props){
                                     <tr key={i}>
                                         <td>{i+1}</td>
                                         <td> {ele.name} </td>
+                                        <td>{ele.noOfCustomer}</td>
                                         <td> {ele.mobile} </td>
                                         <td> {ele.email} </td>
                                         <td> {moment(ele.date).format('L')} </td>
