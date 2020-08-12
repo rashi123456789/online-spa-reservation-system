@@ -1,7 +1,7 @@
 const Reservation = require('../models/reservation')
 
 module.exports.list = (req, res) => {
-    Reservation.find({ user:req.user._id}).populate('course').populate('department').populate('semester')
+    Reservation.find({ user:req.user._id})
         .then((reservation) => {
             res.json(reservation)
         })
@@ -12,7 +12,7 @@ module.exports.list = (req, res) => {
 
 module.exports.show = (req, res) => {
     const id = req.params.id
-    Reservation.findOne({_id:id,user:req.user._id}).populate('course').populate('department').populate('semester')
+    Reservation.findOne({_id:id,user:req.user._id})
         .then((reservation) => {
             if (reservation) {
                 res.json(reservation)
